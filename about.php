@@ -29,7 +29,7 @@
         <div id="main">
             <!-- header start  -->
             <header class="main-header">
-                <a href="index.php" class="header-logo ajax"><img src="images/logo.png" alt=""></a>
+                <a href="index.php" class="header-logo "><img src="images/logo.png" alt=""></a>
                 <!-- sidebar-button --> 
                 <!-- nav-button-wrap-->
                 <div class="nav-button-wrap">

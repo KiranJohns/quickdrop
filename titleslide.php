@@ -36,7 +36,7 @@
         <div id="main">
             <!-- header start  -->
             <header class="main-header">
-               <a href="#" class="header-logo ajax"><img src="images/logo.png" alt=""></a>
+               <a href="#" class="header-logo "><img src="images/logo.png" alt=""></a>
 
                 <!-- sidebar-button --> 
                 <!-- nav-button-wrap-->

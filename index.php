@@ -36,7 +36,7 @@
         <div id="main">
             <!-- header start  -->
             <header class="main-header">
-               <a href="#" class="header-logo ajax"><img src="images/logo.png" alt=""></a>
+               <a href="index.php" class="header-logo "><img src="images/logo.png" alt=""></a>
 
                 <!-- sidebar-button --> 
                 <!-- nav-button-wrap-->
@@ -148,20 +148,42 @@
                     <!--Content -->
                     <div class="content full-height hidden-item">
                         <!--hero-title -->
-   <div class="hero-title fl-wrap first-tile_load">
-    <div class="container ">
-        <div class="section-title fl-wrap">
-           <h2 id="main-title" class="slide-text">Quick<span>Drop</span> Trading & Contracting</h2>
-<div id="sub-content" class="sub-heading slide-text heading5 contain5"> </div>
-            <div class="section-title_category">
-                <a href="#">Quick</a><a href="#">Drop</a>
-            </div>
+  <!-- Image and Text Slider Container -->
+<div class="sync-slider-container">
+  <!-- Background Image Slider -->
+  <div class="kenburns-slider swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" data-swiper-autoplay="4000">
+        <div class="kenburns-slide">
+          <div class="kenburns-bg" style="background-image: url('images/bg/1.jpg');"></div>
+             <div class="overlay"></div>
         </div>
+      </div>
+      <div class="swiper-slide" data-swiper-autoplay="1650">
+        <div class="kenburns-slide">
+          <div class="kenburns-bg " style="background-image: url('images/bg/N102.avif');"></div>
+             <div class="overlay"></div>
+        </div>
+      </div>
+      <div class="swiper-slide" data-swiper-autoplay="1650">
+        <div class="kenburns-slide">
+          <div class="kenburns-bg " style="background-image: url('images/bg/N105.avif');"></div>
+             <div class="overlay"></div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Text Overlay -->
+   <div  class="hero-title">
+  <div class="sync-text-wrapper ">
+    <h2 id="sync-title" class="sync-text heading1">Quick<span class='purple1'>Drop</span> Trading & Contracting</h2>
+    <div id="sync-sub" class="sync-sub sub-heading slide-text heading5 contain5"> </div>
+  </div>
 </div>
-
-
-                        <div class="hero-start-link   dark-bg hero-start-link_mlt bedec_hstl bot-element">
+</div>         
+<!--ms_item end-->           
+                                           <div class="hero-start-link   dark-bg hero-start-link_mlt bedec_hstl bot-element">
                             <div class="scroll-down-wrap">
                                 <div class="mousey">
                                     <div class="scroller scroller2"></div>
@@ -170,41 +192,7 @@
                             </div>
                             <a href="about.php" class="ajax color-bg"><i class="fal fa-long-arrow-right"></i></a>
                         </div>
-                        <!--hero-title end -->
-                        <!--multi-slideshow-wrap_1 -->
-                        <div class="multi-slideshow-wrap_1 ms-wrap">
-                            <div class="pr-bg"></div>
-                            <div class="full-height ">
-                                <!--ms-container-->
-                                <div class="multi-slideshow_1 ms-container fl-wrap full-height">
-                                    <div class="swiper-container">
-                                        <div class="swiper-wrapper">
-                                            <!--ms_item-->
-                                         <!-- First Slide - normal delay (4000ms) -->
-<div class="swiper-slide" data-swiper-autoplay="4000">
-    <div class="ms_item fl-wrap kenburns">
-        <div class="bg" data-bg="images/bg/1.jpg"></div>
-        <div class="overlay"></div>
-    </div>
-</div>
-
-<!-- Second Slide - half delay (2000ms) -->
-<div class="swiper-slide" data-swiper-autoplay="1650">
-    <div class="ms_item fl-wrap kenburns">
-        <div class="bg" data-bg="images/bg/N102.avif"></div>
-        <div class="overlay"></div>
-    </div>
-</div>
-
-<!-- Third Slide - half delay (2000ms) -->
-<div class="swiper-slide" data-swiper-autoplay="1650">
-    <div class="ms_item fl-wrap kenburns">
-        <div class="bg" data-bg="images/bg/N105.jpeg"></div>
-        <div class="overlay"></div>
-    </div>
-</div>
-
-                                            <!--ms_item end-->                                                 
+                        
                                         </div>
                                     </div>
                                 </div>
@@ -235,51 +223,80 @@
         <script type="text/javascript" src="js/core.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
 
- <script>
-const mainTitle = document.getElementById('main-title');
-const subContent = document.getElementById('sub-content');
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-const views = [
-    {
-        main: 'Quick<span>Drop</span> Trading & Contracting',
-        sub: ' '
-    },
-    {
-        main: 'Divisions',
-        sub: [
-            "QuickDrop Trading & Contracting",
-            "QuickDrop IT Solution",
-            "QuickDrop Biomedical Solution",
-            "QuickDrop Delivery"
-        ].map((d, i) => `${i + 1}. ${d} `).join("<br>")
-    }
+<script>
+const syncTitle = document.getElementById('sync-title');
+const syncSub = document.getElementById('sync-sub');
+
+// Your text data
+const textViews = [
+  {
+    main: 'Quick<span class="purple1">Drop</span></br> Trading & Contracting',
+    sub: ''
+  },
+  {
+    main: 'Divisions',
+    sub: [
+      "QuickDrop Trading & Contracting",
+      "QuickDrop IT Solution",
+      "QuickDrop Biomedical Solution",
+      "QuickDrop Delivery"
+    ].map((d, i) => `${i + 1}. ${d}`).join("<br>")
+  }
 ];
 
-let current = 0;
+// Keep track of current text index to avoid redundant updates
+let currentTextIndex = -1;
 
-function slideOutIn() {
-    // Start slide-out
-    mainTitle.classList.remove('visible');
-    subContent.classList.remove('visible');
+function updateText(index) {
+  if (index === currentTextIndex) return; // Don't re-animate if text is same
+  currentTextIndex = index;
 
-    // Wait for slide-out to complete
-    setTimeout(() => {
-        current = (current + 1) % views.length;
-        mainTitle.innerHTML = views[current].main;
-        subContent.innerHTML = views[current].sub;
+  syncTitle.classList.remove('visible');
+  syncSub.classList.remove('visible');
 
-        // Slide-in new content
-        mainTitle.classList.add('visible');
-        subContent.classList.add('visible');
-    }, 700); // Match with CSS transition duration
+  setTimeout(() => {
+    syncTitle.innerHTML = textViews[index].main;
+    syncSub.innerHTML = textViews[index].sub;
+    syncTitle.classList.add('visible');
+    syncSub.classList.add('visible');
+  }, 300);
 }
 
-// Start visible
-mainTitle.classList.add('visible');
-subContent.classList.add('visible');
+const syncedSwiper = new Swiper('.kenburns-slider', {
+  loop: true,
+  speed: 700,
+  effect: 'slide',
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false
+  },
+  on: {
+    slideChangeTransitionStart: function () {
+      // Get true slide position
+      const index = syncedSwiper.realIndex;
 
-setInterval(slideOutIn, 4000);
+      // Logic: 0 → text 0, 1 & 2 → text 1
+      if (index === 0) {
+        updateText(0);
+      } else {
+        updateText(1);
+      }
+
+      // Reset zoom
+      $(".kenburns-bg").css("transform", "scale(1)");
+    },
+    slideChangeTransitionEnd: function () {
+      $(".kenburns-slider .swiper-slide-active .kenburns-bg").css("transform", "scale(1.3)");
+    }
+  }
+});
+
+// Set initial text manually
+updateText(0);
 </script>
+
 
 
     </body>

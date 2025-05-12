@@ -69,9 +69,29 @@
   line-height: 40px;
   color: #9b38aa;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  text-align: left;
 }
 
 .contain5{
   /* padding: 100px; */
   margin-bottom: 100px;
+}
+
+.heading1{
+   font-size: 50px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 55px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  text-align: left;
+  
+}
+
+@media only screen and (max-width: 768px) {
+  .heading1 {
+      font-size: 35px;
+      line-height: 45px;
+  }
 }

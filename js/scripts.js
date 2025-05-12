@@ -1218,3 +1218,32 @@ function readyFunctions() {
     initparallax();
 }
 
+
+
+// new
+
+if ($(".kenburns-swiper").length > 0) {
+    var kenburnsSwiper = new Swiper(".kenburns-swiper", {
+        loop: true,
+        speed: 700,
+        direction: 'horizontal',
+        effect: 'slide',
+        autoplay: {
+            delay: 4000, // fallback
+            disableOnInteraction: false
+        },
+        on: {
+            slideChangeTransitionStart: function () {
+                $(".kenburns-bg").css("transform", "scale(1)");
+            },
+            slideChangeTransitionEnd: function () {
+                $(".kenburns-swiper .swiper-slide-active .kenburns-bg").css("transform", "scale(1.2)");
+            }
+        }
+    });
+
+    // Set background images from data-bg
+    $("[data-bg]").each(function () {
+        $(this).css("background-image", "url(" + $(this).data("bg") + ")");
+    });
+}

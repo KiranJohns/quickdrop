@@ -29,7 +29,7 @@
         <div id="main">
             <!-- header start  -->
             <header class="main-header">
-                <a href="index.php" class="header-logo ajax"><img src="images/logo.png" alt=""></a>
+                <a href="index.php" class="header-logo "><img src="images/logo.png" alt=""></a>
                 <!-- sidebar-button --> 
                 <!-- nav-button-wrap-->
                 <div class="nav-button-wrap">
@@ -153,7 +153,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bg" data-bg="images/bg/N101.png"></div>
+                                <div class="bg" data-bg="images/bg/N101.avif"></div>
                                 <div class="overlay"></div>
                                 <div class="progress-bar-wrap bot-element">
                                     <div class="progress-bar"></div>
